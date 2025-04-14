@@ -5,6 +5,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_openai import ChatOpenAI
 import requests
+import os
 
 llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0)
 
@@ -71,7 +72,7 @@ def confirm_location(state):
 
 
 def get_weather(state):
-    API_KEY = "fd218f8fefc14820f412e84dd5a3a1d3"
+    API_KEY = os.getenv('WEATHER_API')
     location = state['location']
     try:
         response = requests.get(f"https://api.openweathermap.org/data/2.5/weather?q={location}&appid={API_KEY}&units=metric")
