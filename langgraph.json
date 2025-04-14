@@ -1,0 +1,11 @@
+{
+    "graphs": {
+      "simple_graph": "./main.py:runnable"
+    },
+    "env": ".env",
+    "python_version": "3.11",
+    "dependencies": [
+    "."
+  ]
+    
+  }
